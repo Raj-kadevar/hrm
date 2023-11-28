@@ -1,0 +1,13 @@
+.leave{
+    width: 230px;
+    margin:10px;
+    border-radius: 15px;
+    background: linear-gradient(286.13deg,rgba(3,107,132,1),rgba(39,136,159,1));
+    padding: 15px 30px;
+    color: #fff;
+    position: relative;
+}
+.leave-list{
+    display:flex;
+    margin-top:11px;
+}

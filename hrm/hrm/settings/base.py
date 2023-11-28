@@ -1,11 +1,12 @@
 """
 Django settings for hrm project.
 """
-
+from datetime import timedelta
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
 
 import environ
+from rest_framework.settings import api_settings
 
 ########## PATH CONFIGURATION
 BASE_DIR = dirname(dirname(__file__) + "../../../")
@@ -157,8 +158,17 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.messages",
     "rest_framework",
-    "rest_framework.authtoken",
+    'rest_framework.authtoken',
+    'knox',
+    'dj_rest_auth',
 ]
+
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Asia/Kolkata'
+
 
 AUTH_USER_MODEL = "user.User"
 LOGIN_URL = "login"
@@ -189,11 +199,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework.authentication.SessionAuthentication",
-        "rest_framework.authentication.TokenAuthentication",
+        'knox.auth.TokenAuthentication',
     ),
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "PAGE_SIZE": 10
 }
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

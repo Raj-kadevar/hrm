@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet'
+      type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+<div class="container" style="margin-top:120px;">
+    <div class="report-container">
+        <div class="report-header">
+            <h5 class="logo">Hello, {{request.user}}</h5>
+        </div>
+        {% if perms.user.add_user %}
+        <div class="report-body">
+            <button class="add btn btn-outline-primary add">Add user</button>
+        </div>
+
+        <div class="testbox">
+            <form method="POST" enctype="multipart/form-data" id="form">
+                <div id="inputs">
+                    <label id="icon" for="name"><i class="icon-user"></i></label>
+                    <input type="text" name="username" id="username" placeholder="Name" class="inputs" required/>
+                    <span class="name .span"></span></br>
+                    <label id="icon" for="name"><i class="icon-envelope"></i></label>
+                    <input type="email" name="email" id="email" placeholder="Email" required/>
+                    <span class="email .span"></span></br>
+                    <label id="icon" for="name"><i class="icon-shield"></i></label>
+                    <input type="password" name="password" id="password" placeholder="Password" required/>
+                    <span class="password .span"></span></br>
+                    <label id="icon" for="name"><i class="icon-shield"></i></label>
+                    <input type="password" name="password2" id="password2" placeholder="Confirm_password" required/>
+                    <span class="password2 .span"></span></br>
+                    <i id="profile" class="icon-picture"> Select profile picture</i>
+                    <input type="file" name="profile" accept="image/*" id="name" placeholder="Profile">
+                    <span class="profile .span"></span></br>
+                    <div class="role">
+                        <select name="roles" id="roles" required>
+                            <option value="admin">admin</option>
+                            <option value="developer" selected>developer</option>
+                            <option value="manager">manager</option>
+                        </select>
+                        <span class="role .span"></span></br>
+                    </div>
+                    </br>
+                </div>
+                <button class="btn btn-outline-primary" id="register">Register</button>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+</div>
+<div class="container">
+    <div class="report-container2">
+        <div class="report-head">
+            <h5>Get device</h5>
+            <button class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
+                <i class="fa fa-plus-square"></i></button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Get Device</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <label>Devices</label>
+                            <select class="js-example-basic-single" onchange="select()">
+                            </select>
+
+                            <button class="btn btn-outline-warning btn-lg btn-block" id="submit">Add device</button>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="report-container3">
+        <div class="report-header">
+            <h5>Message</h5>
+        </div>
+        <div class="report-body">
+            <img src="http://127.0.0.1:8000/media/bg.png">
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/index.js' %}"></script>
+{% endblock %}
