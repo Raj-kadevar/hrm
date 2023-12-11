@@ -1,0 +1,394 @@
+/* Main CSS Here */
+
+@import url(
+"https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Poppins", sans-serif;
+}
+:root {
+--background-color1: #fafaff;
+--background-color2: #ffffff;
+--background-color3: #ededed;
+--background-color4: #cad7fda4;
+--primary-color: #4b49ac;
+--secondary-color: #0c007d;
+--Border-color: #3f0097;
+--one-use-color: #3f0097;
+--two-use-color: #5500cb;
+}
+body {
+background-color: var(--background-color4);
+max-width: 100%;
+overflow-x: hidden;
+}
+
+header {
+height: 70px;
+width: 100vw;
+padding: 0 30px;
+background-color: var(--background-color1);
+position: fixed;
+z-index: 100;
+box-shadow: 1px 1px 15px rgba(161, 182, 253, 0.825);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+font-size: 27px;
+font-weight: 600;
+color: #F3A546;
+}
+
+.icn {
+height: 30px;
+}
+.menuicn {
+cursor: pointer;
+}
+
+
+.logosec {
+gap: 60px;
+}
+
+
+.message {
+gap: 40px;
+position: relative;
+cursor: pointer;
+}
+.circle {
+height: 7px;
+width: 7px;
+position: absolute;
+background-color: #F3A546;
+border-radius: 50%;
+left: 19px;
+top: 8px;
+}
+.dp {
+height: 60px;
+width: 50px;
+background-color: #F3A546;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+}
+.main-container {
+display: flex;
+width: 100vw;
+position: relative;
+top: 70px;
+z-index: 1;
+}
+.dpicn {
+height: 90px;
+padding:5px;
+}
+
+.main {
+height: calc(100vh - 70px);
+width: 100%;
+overflow-y: scroll;
+overflow-x: hidden;
+padding: 40px 30px 30px 30px;
+}
+
+.main::-webkit-scrollbar-thumb {
+background-image:
+		linear-gradient(to bottom, rgb(0, 0, 85), rgb(0, 0, 50));
+}
+.main::-webkit-scrollbar {
+width: 5px;
+}
+.main::-webkit-scrollbar-track {
+background-color: #F3A546;
+}
+
+.box-container {
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+flex-wrap: wrap;
+gap: 50px;
+}
+.nav {
+min-height: 91vh;
+width: 270px;
+background-color: var(--background-color2);
+position: absolute;
+top: 0px;
+left: 00;
+box-shadow: 1px 1px 10px rgba(198, 189, 248, 0.825);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+overflow: hidden;
+padding: 30px 0 20px 10px;
+}
+.navcontainer {
+margin-left:40px;
+margin-top:120px;
+border-radius:20px;
+height: calc(90vh - 80px);
+width: 215px;
+position: relative;
+overflow-y: scroll;
+overflow-x: hidden;
+transition: all 0.5s ease-in-out;
+}
+.navcontainer::-webkit-scrollbar {
+display: none;
+}
+.navclose {
+width: 70px;
+}
+.nav-option {
+width: 250px;
+height: 50px;
+display: flex;
+align-items: center;
+padding: 0 30px 0 20px;
+gap: 20px;
+transition: all 0.1s ease-in-out;
+}
+.nav-option:hover h5, .nav-option:hover{
+    background: #036b84;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+.nav-option:hover i{
+    color:white;
+}
+
+.nav-img {
+height: 21px;
+color:#036b84;
+}
+
+.nav-img:hover{
+height: 21px;
+}
+
+.nav-upper-options {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 5px;
+}
+
+.option1 {
+border-left: 5px solid #F3A546;
+background-color: #F3A546;
+color: white;
+cursor: pointer;
+}
+.option1:hover {
+border-left: 5px solid #010058af;
+background-color: #F3A546;
+}
+.box {
+height: 130px;
+width: 230px;
+border-radius: 20px;
+box-shadow: 3px 3px 10px rgba(0, 30, 87, 0.751);
+padding: 20px;
+display: flex;
+align-items: center;
+justify-content: space-around;
+cursor: pointer;
+transition: transform 0.3s ease-in-out;
+}
+.box:hover {
+transform: scale(1.08);
+}
+
+.box:nth-child(1) {
+background-color: #F3A546;
+}
+.box:nth-child(2) {
+background-color: #F3A546;
+}
+.box:nth-child(3) {
+background-color: #F3A546;
+}
+.box:nth-child(4) {
+background-color: #F3A546;
+}
+
+.box img {
+height: 50px;
+}
+.box .text {
+color: white;
+}
+.topic {
+font-size: 13px;
+font-weight: 400;
+letter-spacing: 1px;
+}
+
+.topic-heading {
+font-size: 30px;
+letter-spacing: 3px;
+}
+
+.report-container {
+min-height: 150px;
+max-width: 1500px;
+margin: 70px auto 0px auto;
+background-color: #ffffff;
+border-radius: 30px;
+box-shadow: 3px 3px 10px rgb(188, 188, 188);
+padding: 0px 20px 20px 20px;
+}
+
+.report-container2 {
+height: 80px;
+width: 700px;
+margin: 10px auto 0px auto;
+background-color: #ffffff;
+border-radius: 30px;
+box-shadow: 3px 3px 10px rgb(188, 188, 188);
+padding: 0px 20px 20px 20px;
+}
+
+.report-container3 {
+height: auto;
+max-width: 1200px;
+margin: 10px auto 0px auto;
+background-color: #ffffff;
+border-radius: 30px;
+box-shadow: 3px 3px 10px rgb(188, 188, 188);
+padding: 0px 20px 20px 20px;
+}
+.report-container3, img{
+    text-align:center;
+    display: revert;
+}
+
+.report-header {
+height: 80px;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 20px 20px 10px 20px;
+border-bottom: 2px solid rgba(0, 20, 151, 0.59);
+}
+
+.report-head {
+height: 80px;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 20px 20px 10px 20px;
+}
+
+.recent-Articles {
+font-size: 22px;
+font-weight: 600;
+color: #F3A546;
+}
+
+.view {
+height: 35px;
+width: 90px;
+border-radius: 8px;
+background-color: #F3A546;
+color: white;
+font-size: 15px;
+border: none;
+cursor: pointer;
+}
+
+.report-body {
+max-width: auto;
+overflow-x: auto;
+padding: 20px;
+}
+.report-topic-heading,
+
+.t-op {
+font-size: 18px;
+letter-spacing: 0px;
+color :#0D511F;
+}
+table,td{
+    border:1px solid black;
+}
+td{
+    padding:10px;
+}
+.items {
+width: 1120px;
+margin-top: 15px;
+}
+
+.item1 {
+margin-top: 20px;
+}
+.t-op-nextlvl {
+font-size: 14px;
+letter-spacing: 0px;
+font-weight: 500;
+}
+
+.label-tag {
+width: 100px;
+text-align: center;
+background-color: rgb(0, 177, 0);
+color: white;
+border-radius: 4px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.logo{
+color: linear-gradient(0.20turn, #036b84,orange);
+background: linear-gradient(to right,
+                   #036b84,
+                    orange);
+            -webkit-background-clip: text;
+            color: transparent;
+}
+
+.boxx {
+width: 100%;
+height: 100%;
+border-radius: 20px;
+box-shadow: 3px 3px 10px rgba(0, 30, 87, 0.751);
+padding: 20px;
+display: flex;
+align-items: center;
+justify-content: space-around;
+transition: transform 0.3s ease-in-out;
+}
+.boxx:hover {
+transform: scale(1.08);
+}
+
+
+.boxx img {
+height: 50px;
+}
+.boxx .text {
+color: white;
+}
+.js-example-basic-single{
+width:467px;
+}

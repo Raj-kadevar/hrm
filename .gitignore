@@ -1,0 +1,12 @@
+hrm/hrm/settings/dev.py
+*.py[co]
+.idea/
+.coverage
+media/*
+hrm/media/*
+.idea/*	
+.templates/
+.templates
+htmlcov/
+.env
+.flake8
